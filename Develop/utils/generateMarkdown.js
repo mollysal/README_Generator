@@ -3,7 +3,7 @@
 let licenseBadge = '';
 
 function renderLicense(data) {
-  for (const licesne of data.license) {
+  for (const license of data.license) {
     //choices: ["MIT", "ISC", "apache", "GNU", "N/A"]
     if (license == "MIT") {
       licenseBadge += `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`
@@ -20,7 +20,10 @@ function renderLicense(data) {
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-let licenseSection = `## license`
+let licenseSection = `## License 
+Liscense for this application -` + licenseBadge + `
+for more info: [Choose a License](https://choosealicense.com/` 
+
 function renderLicenseSection(license) {
   if (liscense === "N/A") {
     return ''
@@ -28,14 +31,15 @@ function renderLicenseSection(license) {
     return licenseSection
   }
 }
+renderLicenseSection();
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   return `
   # ${data.title}
-   
+  `
   + lisceseSection + 
-  ${data.renderLicense}
+  `${renderLicense(data)}
 
   ## Description
   ${data.description}
@@ -55,8 +59,6 @@ function generateMarkdown(data) {
 
   ## Usage
   ${data.usage}
-  <br>
-  ${data.renderLicenseSection}
 
   ## Features
   ${data.features}
