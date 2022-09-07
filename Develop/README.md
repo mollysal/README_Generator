@@ -1,11 +1,11 @@
 
-  # Testing Readme Application
+  # Readme Generator
   
   ## License
   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
   ## Description
-  Testing
+  Generates a readme.md based off of user input within intergrated terminal.
 
   ---
   ## Contents
@@ -19,22 +19,22 @@
   ---
 
   ## Install
-  Testing
+  use node index.js to run.
 
   ## Usage
-  N/A
+  It will be used within the intergrated terminal by coders who need to generate readme's.
 
   ## Features
-  Inquirer
+  Inquirer 
 
   ## Contribute
   To contribute to this application, please follow the following instructions: 
-  None
+  None at this time.
 
   ## Testing
-  none
+  None at this time.
 
   ## Questions
   * Any questions please reach out to <a href="mailto:ms@gmail.com">ms@gmail.com</a>
-  * GitHub Username ms
+  * GitHub Username mollysal
 
