@@ -60,7 +60,7 @@ const questions = [
 
 // TODO: Create a function to initialize app
 function init() {
-    inquirer.createPromptModule(questions).then(function (userInput) {
+    inquirer.prompt(questions).then(function (userInput) {
         const markdownInfo = genMarkdown(userInput);
 
         // TODO: Create a function to write README file

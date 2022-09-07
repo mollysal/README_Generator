@@ -20,39 +20,38 @@ function renderLicense(data) {
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-let licenseSection = `## License 
-Liscense for this application -` + licenseBadge + `
-for more info: [Choose a License](https://choosealicense.com/` 
+let licenseSection = '';
 
-function renderLicenseSection(license) {
-  if (license === "N/A") {
-    return ''
-  } else {
-    return licenseSection
-  }
+function renderLicenseSection(data) {
+    if (data.license === "N/A") {
+      lisceseSection += ''
+    } else {
+      licenseSection = `## License`
+    }
+  return licenseSection;
 }
-renderLicenseSection();
+
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   return `
   # ${data.title}
-  `
-  + lisceseSection + 
-  `${renderLicense(data)}
+  
+  ${renderLicenseSection(data)}
+  ${renderLicense(data)}
 
   ## Description
   ${data.description}
 
   ---
   ## Contents
-  - [Description] (#description)
-  - [Installation] (#install)
-  - [Usage] (#usage)
-  - [Features] (#features)
-  - [Contribute] (#contribute)
-  - [test] (#testing)
-  - [Questions] (#questions)
+  - [Description](#description)
+  - [Installation](#install)
+  - [Usage](#usage)
+  - [Features](#features)
+  - [Contribute](#contribute)
+  - [test](#testing)
+  - [Questions](#questions)
 
   ## Install
   ${data.install}
