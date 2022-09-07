@@ -25,7 +25,7 @@ Liscense for this application -` + licenseBadge + `
 for more info: [Choose a License](https://choosealicense.com/` 
 
 function renderLicenseSection(license) {
-  if (liscense === "N/A") {
+  if (license === "N/A") {
     return ''
   } else {
     return licenseSection
