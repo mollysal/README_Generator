@@ -29,16 +29,16 @@ const questions = [
         type: "list",
         message: "What license are you using for this application?",
         name: "license",
-        choices: ["MIT", "ISC", "apache", "GNU"]
+        choices: ["MIT", "ISC", "apache", "GNU", "N/A"]
     },
     {
         type: "input",
-        name: "feature",
+        name: "features",
         message: "What features does your application include?"
     },
     {
         type: "input",
-        name: "contributions",
+        name: "contribute",
         message: "Guidelines for contributions?"
     },
     {
@@ -48,12 +48,12 @@ const questions = [
     },
     {
         type: "input",
-        name: "test",
+        name: "gitUN",
         message: "What's your GitHub Username?"
     },
     {
         type: "input",
-        name: "test",
+        name: "email",
         message: "What's your email address?"
     }
 ]; //End of Questions
@@ -62,7 +62,7 @@ const questions = [
 function init() {
     inquirer.createPromptModule(questions).then(function (userInput) {
         const markdownInfo = genMarkdown(userInput);
-        
+
         // TODO: Create a function to write README file
         fs.writeFile('README.md', markdownInfo, (err) => 
         err ? console.log(err) : console.log('Readme file has been created.')
