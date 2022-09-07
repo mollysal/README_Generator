@@ -3,18 +3,16 @@
 let licenseBadge = '';
 
 function renderLicense(data) {
-  for (const license of data.license) {
     //choices: ["MIT", "ISC", "apache", "GNU", "N/A"]
-    if (license == "MIT") {
-      licenseBadge += `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`
-    } else if (license === "ISC") {
-      licenseBadge += `[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)`
-    } else if (license === "apache") {
-      licenseBadge += `[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)`
-    } else if (license === "GNU") {
-      licenseBadge += `[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)`
+    if (data.license == "MIT") {
+      licenseBadge = `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`
+    } else if (data.license == "ISC") {
+      licenseBadge = `[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)`
+    } else if (data.license == "apache") {
+      licenseBadge = `[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)`
+    } else if (data.license == "GNU") {
+      licenseBadge = `[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)`
     }
-  }
   return licenseBadge;
 }
 
@@ -23,11 +21,11 @@ function renderLicense(data) {
 let licenseSection = '';
 
 function renderLicenseSection(data) {
-    if (data.license === "N/A") {
-      lisceseSection += ''
-    } else {
-      licenseSection = `## License`
-    }
+  if (data.license === "N/A") {
+    lisceseSection += ''
+  } else {
+    licenseSection = `## License`
+  }
   return licenseSection;
 }
 
@@ -52,6 +50,7 @@ function generateMarkdown(data) {
   - [Contribute](#contribute)
   - [test](#testing)
   - [Questions](#questions)
+  ---
 
   ## Install
   ${data.install}
@@ -63,6 +62,7 @@ function generateMarkdown(data) {
   ${data.features}
 
   ## Contribute
+  To contribute to this application, please follow the following instructions: 
   ${data.contribute}
 
   ## Testing
